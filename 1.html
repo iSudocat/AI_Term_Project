@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Sudocat" content="AI Page">
+    <title>AI大作业</title>
+
+    <!-- Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/alltable.css" rel="stylesheet">
+
+    <style>
+        .header {
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body onload="drawRect()">
+    <div class="container">
+        <header class="header">
+            <nav>
+                <ul class="nav nav-pills float-right">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="1.html">A*算法解决迷宫问题</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="2.html">遗传算法生成指定字符串</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">AI大作业</h3>
+            <HR>
+        </header>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-1"></div>
+            <div class="col-xl-9">
+
+                <canvas id="canvas">你的浏览器不支持HTML5 canvas ，请使用 google chrome
+                    浏览器 打开.
+                </canvas>
+
+            </div>
+            <div class="col-xl-2">
+                <button id="beginpoint" class="btn btn-outline-success" onclick="placebp()">放置开始点</button>
+                <div class="clearfix" style="margin-bottom: 10px;"></div>
+                <button id="endpoint" class="btn btn-outline-danger" onclick="placeep()">放置结束点</button>
+                <div class="clearfix" style="margin-bottom: 10px;"></div>
+                <button id="obstacle" class="btn btn-outline-warning" onclick="placeos()">添加障碍</button>
+                <div class="clearfix" style="margin-bottom: 10px;"></div>
+                <button class="btn btn-outline-info" type="button" onclick="search_astar()">
+                    <span id="Astar_ing" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
+                        style="display: none;"></span>
+                    A*搜索
+                </button>
+                <div class="clearfix" style="margin-bottom: 10px;"></div>
+                <button id="obstacle" class="btn btn-outline-secondary" onclick="location.reload();">再来一次</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <footer class="footer">
+            <HR>
+            <p>Copyright &copy; 2019 <a href="https://github.com/iSudocat" target="_blank">Sudocat</a> All Rights
+                Reserved.</p>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js" crossorigin="anonymous"></script>
+    <script src="js/Astar.js" crossorigin="anonymous"></script>
+    <script src="js/Ai1.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

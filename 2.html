@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Sudocat" content="AI Page">
+    <title>AI大作业</title>
+
+    <!-- Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/alltable.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+
+    <style>
+        .header {
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <nav>
+                <ul class="nav nav-pills float-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="1.html">A*算法解决迷宫问题</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="2.html">遗传算法生成指定字符串</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">AI大作业</h3>
+            <HR>
+        </header>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">欲生成的字符串(可输入英文及半角符号)</span>
+                    </div>
+                    <input id="input_src" type="text" class="form-control" aria-describedby="basic-addon1"
+                        value="Hello World!">
+                </div>
+            </div>
+
+        </div>
+        <div class="clearfix" style="margin-bottom: 10px;"></div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">突变几率</span>
+                    </div>
+                    <input id="input_mutate" type="text" class="form-control" aria-describedby="basic-addon1"
+                        value="0.6">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">种群个体数</span>
+                    </div>
+                    <input id="input_size" type="text" class="form-control" aria-describedby="basic-addon1" value="50">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <button id="run" class="btn btn-info">
+                    使用遗传算法生成字符串
+                </button>
+                <button id="runing" class="btn btn-info" style="display: none;">
+                    <span id="ing" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    使用遗传算法生成字符串
+                </button>
+
+            </div>
+        </div>
+
+
+        <div class="clearfix" style="margin-bottom: 10px;"></div>
+        <table id="table" data-height="640" data-url="">
+        </table>
+
+
+    </div>
+
+    <div class="container">
+        <footer class="footer">
+            <HR>
+            <p>Copyright &copy; 2019 <a href="https://github.com/iSudocat" target="_blank">Sudocat</a> All Rights
+                Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap-table.min.js" crossorigin="anonymous"></script>
+    <script src="js/Ai2.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
