@@ -13,7 +13,7 @@
  * 2.启动Google Chrome等符合现代化标准的浏览器，访问http://localhost:2333/1.html（2333可改为自行设定的端口号） 
 
 * 在线运行
- * 直接访问 [GitHub Page](https://isudocat.github.io/AI_Term_Project/)
+ * 直接访问 [GitHub Page](https://isudocat.github.io/AI_Term_Project/1.html)
 
 ## 特别感谢
 * 前端框架：[Boostrap](https://code.z01.com/v4/)
