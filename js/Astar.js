@@ -9,20 +9,20 @@ function searchRoad(map, bgx, bgy, endx, endy) {
     do {
         var currentPoint = openList.pop();
         closeList.push(currentPoint);
-        var surroundPoint = SurroundPoint(currentPoint);
-        for (var i in surroundPoint) {
-            var item = surroundPoint[i];                //周围的点
+        var surroundPoint = SurroundPoint(currentPoint);    //获得周围的4个点
+        for (var i in surroundPoint) {      //逐个检查周围的4个点
+            var item = surroundPoint[i];
             if (
                 item.x >= 0 && item.x <= 24 &&                  //是否在地图上
                 item.y >= 0 && item.y <= 24 &&
                 map[item.x][item.y] != 2 &&         //是否障碍物
                 !existList(item, closeList) &&           //是否在CLOSE表中
-                map[item.x][currentPoint.y] != 2 &&   //之间是否有障碍物
+                map[item.x][currentPoint.y] != 2 &&   //与当前点之间是否有障碍物
                 map[currentPoint.x][item.y] != 2
             ) {
-                var g = currentPoint.G + 5      //到上下左右的耗费估值为5
+                var g = currentPoint.G + 1;
                 if (!existList(item, openList)) {
-                    item.H = Math.abs(endx - item.x) * 10 + Math.abs(endy - item.y) * 10;
+                    item.H = Math.abs(endx - item.x) + Math.abs(endy - item.y); //用曼哈顿距离对到达终点的耗费进行估值
                     item.G = g;
                     item.F = item.H + item.G;
                     item.parent = currentPoint;
@@ -44,7 +44,7 @@ function searchRoad(map, bgx, bgy, endx, endy) {
         if (openList.length == 0) {     //OPEN表空却没有通路，查找失败
             break;
         }
-        openList.sort(sortF);   //循环回去时找出F值最小的, 将其从OPEN表中删除
+        openList.sort(sortF);   //对OPEN表进行排序，便于下次循环开头直接取出F值最小的点
     } while (!(result_index = existList({ x: endx, y: endy }, openList)));
 
     if (!result_index) {
